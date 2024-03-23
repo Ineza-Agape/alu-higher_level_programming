@@ -1,4 +1,6 @@
--- privileges!
-REVOKE AUDIT_ABORT_EXEMPT, FIREWALL_EXEMPT, AUTHENTICATION_POLICY_ADMIN, GROUP_REPLICATION_STREAM, PASSWORDLESS_USER_ADMIN, SENSITIVE_VARIABLES_OBSERVER, TELEMETRY_LOG_ADMIN ON *.* FROM 'user_0d_1'@'localhost', 'user_0d_2'@'localhost';
-SHOW GRANTS FOR 'user_0d_1'@'localhost';
-SHOW GRANTS FOR 'user_0d_2'@'localhos`t';
+-- Grant privileges to user_0d_1
+GRANT ALL PRIVILEGES ON *.* TO 'user_0d_1'@'localhost';
+
+-- Grant privileges to user_0d_2
+CREATE USER 'user_0d_2'@'localhost';
+GRANT ALL PRIVILEGES ON *.* TO 'user_0d_2'@'localhost';
